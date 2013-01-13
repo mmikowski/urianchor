@@ -122,18 +122,18 @@ Anchor against a schema has been included.  Since we don't expect
 the allowable schema to change during run-time, we use a
 module configuration to set the schema, like so:
 
-  $uriAnchor.configModule({
-    schema_map : {
-      page    : { profile : true, pdf : true },
-      _page   : {
-        uname   : true,
-        online  : { 'today','yesterday','earlier' }
-      },
-      slider  : { confirm : 'deny' },
-      _slider : { text : 'goodbye' },
-      color   : { red : true, green : true, blue : true }
-    }
-  });
+    $uriAnchor.configModule({
+      schema_map : {
+        page    : { profile : true, pdf : true },
+        _page   : {
+          uname   : true,
+          online  : { 'today','yesterday','earlier' }
+        },
+        slider  : { confirm : 'deny' },
+        _slider : { text : 'goodbye' },
+        color   : { red : true, green : true, blue : true }
+      }
+    });
 
 This check occurs only during setting of the Anchor, not
 during its parsing ( See makeAnchorMap )
@@ -186,6 +186,7 @@ for routines using setAnchor to check if a part of the anchor
 has changed.
 
 ### Example
+
 If the browser URI Anchor looks like this:
 
     #!page=profile:uname,wendy|online,true&slider=confirm:text,hello\
