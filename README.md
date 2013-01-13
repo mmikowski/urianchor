@@ -1,5 +1,5 @@
 # uriAnchor 
-## a jquery plugin for management of the uri hash component
+## a jQuery plugin for management of the uri hash component
 
 Michael S. Mikowski - Posted 2013-01-12
 
@@ -102,16 +102,16 @@ This sets the URI Anchor to:
 Options: The second positional argument tp this method, option_map,
 provides a number of options for delimiters:
 
-* delimit_char     : delimiter independent args
-  Defaults to '&'
+* delimit_char     : delimiter independent args.  
+  Defaults to '&'.
 * delimit_kv_char  : delimiter key-value of independent args
-  Defaults to '='
+  Defaults to '='.
 * sub_delimit_char : delimiter independent and dependent args
-  Defaults to ':'
+  Defaults to ':'.
 * dep_delimit_char : delimiter between key-value of dependent args
-  Defaults to '|'
+  Defaults to '|'.
 * dep_kv_delimit_char : key-value delimiter for dependent args.
-  Defaults to ','
+  Defaults to ','.
 
 Boolean values ( as part of a key-value pair ) are convert into the stings 'true' or 'false'.
 
