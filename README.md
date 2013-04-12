@@ -215,4 +215,16 @@ Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
       color : 'red'
     };
 
+## TODO ##
+
+- Maybe reconsider the structure of dependent and indepent variables
+
+## Contribute! ##
+
+If you want to help out, like all jQuery plugins this is hosted at
+GitHub. Any improvements or suggestions are welcome!
+You can reach me at mike[dot]mikowski[at]gmail[dotcom].
+
+Cheers, Mike
+
 END
