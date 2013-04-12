@@ -4,6 +4,12 @@
 
 A jQuery plugin for management of the URI hash component.
 
+Use this plugin to manage dependent and independent variables in the hash 
+fragment of the URI.  It has been designed and updated over five commercial
+SPA projects and is featured in the book
+[Single page web applications - JavaScript end-to-end](http://manning.com/mikowski).
+It provides the capability to make the URI fragment your application state API. Bookmarks, browser history, the back button, and the forward button can all be made to act as the user expects while enabling you to update only the part of the page that has changed.",
+
 ## Release Notes ##
 
 ### Copyright (c)###
@@ -13,8 +19,8 @@ A jQuery plugin for management of the URI hash component.
 Dual licensed under the MIT or GPL Version 2
 http://jquery.org/license
 
-### Version 1.1.1, 1.1.2 ###
-This is the first release registered with jQuery plugins.
+### Version 1.1.0-3 ###
+This are the first releases registered with jQuery plugins.
 
 ## Methods ##
 

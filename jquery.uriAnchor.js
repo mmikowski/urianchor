@@ -8,7 +8,7 @@
  * http://jquery.org/license
  *
  * Versions
- *  1.1.1, 1.1.2 - Initial jQuery plugin site releases
+ *  1.1.1-3 - Initial jQuery plugin site releases
  *
 */
 
@@ -69,10 +69,10 @@
     // Begin internal utility /parseStringToMap/
     parseStringToMap = function ( arg_map  ) {
       var
-        input_string = arg_map.input_string      || '',
+        input_string    = arg_map.input_string    || '',
         delimit_char    = arg_map.delimit_char    || '&',
         delimit_kv_char = arg_map.delimit_kv_char || '=',
-        output_map     = {},
+        output_map      = {},
 
         splitter_array, i, key_val_array
         ;
@@ -103,10 +103,10 @@
       var
         anchor_map          = anchor_map_in || {},
         option_map          = option_map_in || {},
-        delimit_char        = option_map.delimit_char      || '&',
-        delimit_kv_char     = option_map.delimit_kv_char   || '=',
-        sub_delimit_char    = option_map.sub_delimit_char  || ':',
-        dep_delimit_char    = option_map.dep_delimit_char  || '|',
+        delimit_char        = option_map.delimit_char        || '&',
+        delimit_kv_char     = option_map.delimit_kv_char     || '=',
+        sub_delimit_char    = option_map.sub_delimit_char    || ':',
+        dep_delimit_char    = option_map.dep_delimit_char    || '|',
         dep_kv_delimit_char = option_map.dep_kv_delimit_char || ',',
         schema_map         = configMap.schema_map,
         key_val_array       = [],
