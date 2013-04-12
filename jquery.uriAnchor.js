@@ -8,7 +8,7 @@
  * http://jquery.org/license
  *
  * Versions
- *  1.1.0 - Initial jQuery plugin site release
+ *  1.1.1 - Initial jQuery plugin site release
  *
 */
 

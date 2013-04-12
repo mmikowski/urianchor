@@ -1,5 +1,5 @@
 { "name"     : "uriAnchor",
-  "version"  : "1.1.0",
+  "version"  : "1.1.1",
   "title"    : "Sophisticated management of the URI location hash",
   "author"   : {
     "name"  : "Michael S. Mikowski",
