@@ -1,19 +1,23 @@
 /*
- * jQuery URI Anchor Plugin v1.1
- * http://www.dynaorg.com/jquery/uriAnchor/
+ * Jquery plugin for state managment through the URI anchor (hash fragment)
  *
- * Copyright (c) 2011, 2012 Michael S. Mikowski
+ * Copyright (c) 2013 Michael S. Mikowski
+ * (mike[dot]mikowski[at]gmail[dotcom])
+ *
  * Dual licensed under the MIT or GPL Version 2
  * http://jquery.org/license
  *
+ * Versions
+ *  1.1.0 - Initial jQuery plugin site release
+ *
 */
 
-/*jslint        browser : true, continue : true,
- devel  : true, indent  : 2,    maxerr   : 50,
- newcap : true, nomen   : true, plusplus : true,
- regexp : true, sloppy  : true, vars     : false,
- white  : true
- */
+/*jslint         browser : true, continue : true,
+  devel  : true, indent  : 2,    maxerr   : 50,
+  newcap : true, nomen   : true, plusplus : true,
+  regexp : true, sloppy  : true, vars     : false,
+  white  : true
+*/
 
 /*global jQuery */
 
@@ -30,7 +34,7 @@
 
       getErrorReject,   getVarType,       getCleanAnchorString,
       parseStringToMap, makeAnchorString, setAnchor,
-      makeAnchorMap
+      makeAnchorMap,    configModule
       ;
     //----------------- END MODULE SCOPE VARIABLES ---------------
 
@@ -478,7 +482,7 @@
 
     // Begin public method /configModule/
     // Set configuration options
-    var configModule = function ( arg_map  ) {
+    configModule = function ( arg_map  ) {
       var
         settable_map = configMap.settable_map_key,
         key_name, error

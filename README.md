@@ -1,47 +1,58 @@
-# uriAnchor 
-## a jquery plugin for management of the uri hash component
+# uriAnchor #
 
-Michael S. Mikowski - Posted 2013-01-12
+## Summary ##
 
-## method: setAnchor
+A jQuery plugin for management of the uri hash component.
 
-### Purpose
+## Release Notes ##
+
+### Copyright (c)###
+2013 Michael S. Mikowski (mike[dot]mikowski[at]gmail[dotcom])
+
+### License ###
+Dual licensed under the MIT or GPL Version 2
+http://jquery.org/license
+
+### Version 1.1.0 ###
+This is the first release registered with jQuery plugins.
+
+## Methods ##
+
+### $.uriAnchor.setAnchor ##
+
+#### Purpose ####
 
 Sets Anchor component of the URI from a Map
 (The Anchor component is also known as the
 'hash fragment' or 'bookmark component')
 
-### Arguments
+#### Arguments ####
 
 Arguments are positional:
 
-* 1 ( anchor_map )   The map to be encoded to the URI anchor
-* 2 ( option_map )   : map of options
-* 3 ( replace_flag )  : boolean flag to replace the URI When true, the URI is replaced, which means the prior URI is not entered into the browser history
+- 1 ( `anchor_map` ) : The map to be encoded to the URI anchor
+- 2 ( `option_map` ) : A map of options
+- 3 ( `replace_flag` ) : A boolean flag.  When true, the method replaces the URI so that prior URI is not entered into the browser history
 
-### Environment
+#### Environment ####
 
 Expects the document.location browser object
 
-### Settings
+#### Settings ####
 
 none
 
-### Settings
-
-none
-
-### Returns
+#### Returns ####
 
 boolean: true on success, false on failure
 
-### Throws
+#### Throws ####
 
 none
 
-### Details
+#### Details ####
 
-The first positional argument, anchor_map, may be a simple map:
+The first positional argument, `anchor_map`, may be a simple map:
 
     $.uriAnchor.setAnchor({
       page   : 'profile',
@@ -57,10 +68,10 @@ All these arguments are independent, that is, they can vary
 independent of each other. We also support dependent values -
 values that depend on others.
 
-An independent argument key has no '_' prefix.  The same key name,
-prefixed by an '_', holds the arguments that are dependent on
-an independent argument.  The dependent key always points
-to a map.  Consider:
+An independent argument key has no `_` prefix.  The same key name,
+prefixed by an `_`, holds the arguments that are dependent on
+an independent argument. The dependent key always points
+to a map. Consider:
 
     $.uriAnchor.setAnchor({
       page   : 'profile',
@@ -76,7 +87,7 @@ This changes the URI Anchor to:
 
 Only independent keys and their matching dependent keys are
 processed.  All other keys are ignored.  Importantly, this includes
-keys of the form _s_/key/ ( e.g. '_s_page' ) returned by makeAnchorMap
+keys of the form `_s_<key>` ( e.g. `_s_page` ) returned by makeAnchorMap
 
 Setting a more complex anchor map is illustrated below:
 
@@ -99,19 +110,14 @@ This sets the URI Anchor to:
      #!page=profile:uname,wendy|online,today&slider=confirm:text,hello\
        |pretty,false&color=red
 
-Options: The second positional argument tp this method, option_map,
+Options: The second positional argument tp this method, `option_map`,
 provides a number of options for delimiters:
 
-* delimit_char     : delimiter independent args
-  Defaults to '&'
-* delimit_kv_char  : delimiter key-value of independent args
-  Defaults to '='
-* sub_delimit_char : delimiter independent and dependent args
-  Defaults to ':'
-* dep_delimit_char : delimiter between key-value of dependent args
-  Defaults to '|'
-* dep_kv_delimit_char : key-value delimiter for dependent args.
-  Defaults to ','
+- `delimit_char`   : Delimiter between independent args. Default is `&`.
+- `delimit_kv_char`: Delimiter between key and value of independent args.  Default is `=`.
+- `sub_delimit_char` : Delimiter between independent and dependent args. Defaults is `:`.
+* `dep_delimit_char` : Delimiter between key-value pairs in dependent args. Default is `|`.
+- `dep_kv_delimit_char` : Delimiter between key and value of dependent args.  Default is ','
 
 Boolean values ( as part of a key-value pair ) are convert into the stings 'true' or 'false'.
 
@@ -138,44 +144,44 @@ module configuration to set the schema, like so:
 This check occurs only during setting of the Anchor, not
 during its parsing ( See makeAnchorMap )
 
-The replace_flag instructs the routine to replace the uri,
+The `replace_flag` instructs the routine to replace the uri,
 discarding browser history
 
 
-## method: makeAnchorMap
+### $.uriAnchor.makeAnchorMap
 
-### Purpose
+#### Purpose
 
  Parses URI anchor and returns as map
 
-### Arguments
+#### Arguments
 
  none
 
-### Environment
+#### Environment
 
  Expects the document.location browser object
 
-### Settings
+#### Settings
 
  none
 
-### Returns
+#### Returns
 
  Map
 
-### Throws
+#### Throws
 
  none
 
 
-### Details
+#### Details
 
 Parses the browser URI anchor into a map using the same
 rules used to set the anchor in the method setAnchor
 ( see above ).
 
-This method creates an additional key type, _s_<indendent_arg>
+This method creates an additional key type, `_s_<indendent_arg>`
 for each independent argument with dependent arguments.
 
 These keys point to a string representation of the independent
@@ -185,7 +191,7 @@ These values are ignored by setAnchor, but they are useful
 for routines using setAnchor to check if a part of the anchor
 has changed.
 
-### Example
+#### Example
 
 If the browser URI Anchor looks like this:
 
@@ -209,3 +215,4 @@ Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
       color : 'red'
     };
 
+END

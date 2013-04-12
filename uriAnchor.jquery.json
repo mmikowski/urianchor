@@ -1,0 +1,31 @@
+{ "name"     : "uriAnchor",
+  "version"  : "1.1.0",
+  "title"    : "Sophisticated management of the URI location hash",
+  "author"   : {
+    "name"  : "Michael S. Mikowski",
+    "email" : "mike.mikowski@gmail.com"
+  },
+  "licenses" : [
+    { "type" : "MIT",
+      "url"  : "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"
+    },
+    { "type" : "GPLv2",
+      "url"  : "http://www.gnu.org/licenses/gpl-2.0.html"
+    }
+  ],
+  "dependencies" : { "jquery" : ">=1.6.2" },
+
+  "description" : "Use this plugin to manage dependent and independent variables in the hash fragment of the URI.  It has been designed and updated over five commercial SPA projects, and provides the capability to make the URI fragment your application state API.  Bookmarks, browser history, the back button, and the forward button can all be made to act as the user expects. It is featured in the book 'Single page web applications - JavaScript end-to-end' (http://manning.com/mikowski)."
+  "keywords" : [
+    "hashtag", "hash", "uri", "bookmarks", "history", "address", "location",
+    "hashchange", "onhashchange"
+  ],
+  "url"         : "https://github.com/mmikowski/urianchor",
+  "homepage"    : "https://github.com/mmikowski/urianchor",
+  "bugs"        : "https://github.com/mmikowski/urianchor/issues",
+  "maintainers" : [
+    { "name"  : "Michael S. Mikowski",
+      "email" : "mike.mikowski@gmail.com"
+    }
+  ]
+}
