@@ -1,6 +1,6 @@
 { "name"     : "uriAnchor",
-  "version"  : "1.1.1",
-  "title"    : "Sophisticated management of the URI location hash",
+  "version"  : "1.1.2",
+  "title"    : "uriAnchor: URI state made simple", 
   "author"   : {
     "name"  : "Michael S. Mikowski",
     "email" : "mike.mikowski@gmail.com"

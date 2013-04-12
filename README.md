@@ -13,7 +13,7 @@ A jQuery plugin for management of the URI hash component.
 Dual licensed under the MIT or GPL Version 2
 http://jquery.org/license
 
-### Version 1.1.1 ###
+### Version 1.1.1, 1.1.2 ###
 This is the first release registered with jQuery plugins.
 
 ## Methods ##
