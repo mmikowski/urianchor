@@ -2,7 +2,7 @@
 
 ## Summary ##
 
-A jQuery plugin for management of the uri hash component.
+A jQuery plugin for management of the URI hash component.
 
 ## Release Notes ##
 
@@ -144,7 +144,7 @@ module configuration to set the schema, like so:
 This check occurs only during setting of the Anchor, not
 during its parsing ( See makeAnchorMap )
 
-The `replace_flag` instructs the routine to replace the uri,
+The `replace_flag` instructs the routine to replace the URI,
 discarding browser history
 
 
@@ -196,7 +196,7 @@ has changed.
 If the browser URI Anchor looks like this:
 
     #!page=profile:uname,wendy|online,true&slider=confirm:text,hello\
-    |pretty,false&color=red
+      |pretty,false&color=red
 
 Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
 
