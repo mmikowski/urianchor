@@ -212,9 +212,9 @@ Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
     { page : 'profile',
       _page : {
         uname   : 'wendy',
-        online  : 'today'
+        online  : 'true'
       },
-      _s_page : 'profile:uname,wendy|online,today',
+      _s_page : 'profile:uname,wendy|online,true',
       slider  : 'confirm',
       _slider : {
        text   : 'hello',
