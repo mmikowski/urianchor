@@ -13,6 +13,21 @@ Bookmarks, browser history, the back button, and the forward button can all be m
 to act as the user expects while enabling you to update only the part of the page 
 that has changed.
 
+## Replace Backbone with something much more robust ##
+
+The plugin, used with a few other well-chosen tools, form a fantastic basis for a lean, easy to use SPA architecture as detailed in the [the book](http://manning.com/mikowski)(http://manning.com/mikowski).  Here are the recommended tools:
+
+- Model Events: This plugin uses the jQuery event mechanism, which eliminates having to manage two different event types.
+- Routing: Use [uriAnchor](https://github.com/mmikowski/urianchor/) for much more robust routing, including support to independent and dependent query arguments.
+- Data Model: Use [taffyDB](https://github.com/typicaljoe/taffydb/) for
+  superior and more flexible client side data management.
+- Templating: Use [Dust](http://linkedin.github.io/dustjs/) for much more useful templates that don't tempt you to intermingle display methods with application logic.
+- Touch interface: Use [Unified events](https://github.com/mmikowski/jquery.event.ue) to handle touch and mouse events.
+- AJAX: Use jQuery native AJAX methods.
+- Promises: Use jQuery native promise methods.
+
+This suite of tools has all the capabilities of modern framework libraries but, when used correctly, can vastly improve flexibility and testability. It leverages jQuery's excellent built-in tools instead of ignoring them!
+
 ## Release Notes ##
 
 ### Copyright (c)###
@@ -23,7 +38,10 @@ Dual licensed under the MIT or GPL Version 2
 http://jquery.org/license
 
 ### Version 1.1.0-3 ###
-This are the first releases registered with jQuery plugins.
+These are the first releases registered with jQuery plugins.
+
+### Version 1.2.1 ###
+Documentation updates, minor bug fixes.
 
 ## Methods ##
 

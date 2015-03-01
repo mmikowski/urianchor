@@ -9,6 +9,7 @@
  *
  * Versions
  *  1.1.1-3 - Initial jQuery plugin site releases
+ *  1.2.1   - Updated documentaiton, minor bug fixes
  *
 */
 
@@ -22,7 +23,7 @@
 /*global jQuery */
 
 (function ($) {
-  $.uriAnchor = ( function ( ) {
+  $.uriAnchor = (function () {
     //---------------- BEGIN MODULE SCOPE VARIABLES --------------
     var
       configMap = {
@@ -114,7 +115,6 @@
         schema_map_val, schema_map_dep, schema_map_dep_val,
         key_name, key_value, class_name, output_kv_string,
         sub_key_name, dep_map, dep_key_name, dep_key_value,
-        dep_class_name,
 
         dep_kv_array
         ;
@@ -197,7 +197,6 @@
             for ( dep_key_name in dep_map  ) {
               if ( dep_map.hasOwnProperty( dep_key_name ) ) {
                 dep_key_value = dep_map[dep_key_name];
-                dep_class_name = getVarType( dep_key_value  );
 
                 if ( schema_map_dep  ) {
                   schema_map_dep_val = schema_map_dep[dep_key_name];
@@ -496,8 +495,8 @@
           else {
             error         = new Error();
             error.name    = 'Bad Input';
-            error.message = 'Setting config key |'
-              + key_name + '| is not supported';
+            error.message = 'Setting config key |' + key_name
+              + '| is not supported';
             throw error;
           }
         }
@@ -509,7 +508,7 @@
     return {
       configModule     : configModule,
       getVarType       : getVarType,
-      makeAnchorMap   : makeAnchorMap,
+      makeAnchorMap    : makeAnchorMap,
       makeAnchorString : makeAnchorString,
       setAnchor        : setAnchor
     };
