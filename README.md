@@ -142,7 +142,7 @@ module configuration to set the schema, like so:
         page    : { profile : true, pdf : true },
         _page   : {
           uname   : true,
-          online  : { 'today','yesterday','earlier' }
+          online  : [ 'today','yesterday','earlier' ]
         },
         slider  : { confirm : 'deny' },
         _slider : { text : 'goodbye' },
