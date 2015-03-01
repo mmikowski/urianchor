@@ -160,7 +160,7 @@ module configuration to set the schema, like so:
         page    : { profile : true, pdf : true },
         _page   : {
           uname   : true,
-          online  : { 'today','yesterday','earlier' }
+          online  : [ 'today','yesterday','earlier' ]
         },
         slider  : { confirm : 'deny' },
         _slider : { text : 'goodbye' },
@@ -230,9 +230,9 @@ Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
     { page : 'profile',
       _page : {
         uname   : 'wendy',
-        online  : 'today'
+        online  : 'true'
       },
-      _s_page : 'profile:uname,wendy|online,today',
+      _s_page : 'profile:uname,wendy|online,true',
       slider  : 'confirm',
       _slider : {
        text   : 'hello',
