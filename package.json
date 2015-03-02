@@ -1,0 +1,50 @@
+{
+  "name": "jquery.uriAnchor",
+  "version": "1.2.1",
+  "description": "uriAnchor jQuery plugin - SPA URI management made simple. Use this plugin to manage dependent and independent parameters in the hash fragment of the URI.  It has been designed and updated over five commercial SPA projects and is featured in the book [Single page web applications - JavaScript end-to-end](http://manning.com/mikowski). It provides the capability to make the URI fragment your application state API.  Bookmarks, browser history, the back button, and the forward button can all be made to act as the user expects.",
+  "main": "jquery.uriAnchor.js",
+  "scripts": {
+    "test": "echo \"No test yet specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmikowski/urianchor.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "hashtag",
+    "hash",
+    "uri",
+    "bookmarks",
+    "history",
+    "address",
+    "location",
+    "hashchange",
+    "onhashchange",
+    "routing",
+    "router",
+    "dispatch"
+  ],
+  "author": "Michael S. Mikowski <mike.mikowski@gmail.com>",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/mmikowski/urianchor/issues"
+  },
+  "homepage": "https://github.com/mmikowski/urianchor",
+
+  "jquery_extra": "Keys below are not used by the npm manifest"
+  "title": "uriAnchor: SPA URI management made simple",
+  "dependencies": { "jquery": ">=1.6.2" },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"
+    },
+    {
+      "type": "GPLv2",
+      "url": "http://www.gnu.org/licenses/gpl-2.0.html"
+    }
+  ],
+  "maintainers": [ "Michael S. Mikowski <mike.mikowski@gmail.com>" ]
+}
