@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/mmikowski/urianchor",
 
-  "jquery_extra": "Keys below are not used by the npm manifest"
+  "jquery_extra": "Keys below are not used by the npm manifest",
   "title": "uriAnchor: SPA URI management made simple",
   "dependencies": { "jquery": ">=1.6.2" },
   "licenses": [
