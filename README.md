@@ -155,7 +155,7 @@ Anchor against a schema has been included.  Since we don't expect
 the allowable schema to change during run-time, we use a
 module configuration to set the schema, like so:
 
-    $uriAnchor.configModule({
+    $.uriAnchor.configModule({
       schema_map : {
         page    : { profile : true, pdf : true },
         _page   : {
