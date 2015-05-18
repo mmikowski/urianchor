@@ -4,44 +4,14 @@
 
 A jQuery plugin for management of the URI hash component.
 
-Use this plugin to manage dependent and independent variables in the hash 
+Use this plugin to manage dependent and independent variables in the hash
 fragment of the URI.  It has been designed and updated over five commercial
 SPA projects and is featured in the book
-[Single page web applications - JavaScript end-to-end](http://manning.com/mikowski).
-It provides the capability to make the URI fragment your application state API. 
-Bookmarks, browser history, the back button, and the forward button can all be made 
-to act as the user expects while enabling you to update only the part of the page 
-that has changed.
-
-## Replace Backbone with something much more robust ##
-
-The plugin, used with a few other well-chosen tools, form a fantastic basis for a lean, easy to use SPA architecture as detailed in the [the book](http://manning.com/mikowski)(http://manning.com/mikowski).  Here are the recommended tools:
-
-- Model Events: This plugin uses the jQuery event mechanism, which eliminates having to manage two different event types.
-- Routing: Use [uriAnchor](https://github.com/mmikowski/urianchor/) for much more robust routing, including support to independent and dependent query arguments.
-- Data Model: Use [taffyDB](https://github.com/typicaljoe/taffydb/) for
-  superior and more flexible client side data management.
-- Templating: Use [Dust](http://linkedin.github.io/dustjs/) for much more useful templates that don't tempt you to intermingle display methods with application logic.
-- Touch interface: Use [Unified events](https://github.com/mmikowski/jquery.event.ue) to handle touch and mouse events.
-- AJAX: Use jQuery native AJAX methods.
-- Promises: Use jQuery native promise methods.
-
-This suite of tools has all the capabilities of modern framework libraries but, when used correctly, can vastly improve flexibility and testability. It leverages jQuery's excellent built-in tools instead of ignoring them!
-
-## Release Notes ##
-
-### Copyright (c)###
-2013 Michael S. Mikowski (mike[dot]mikowski[at]gmail[dotcom])
-
-### License ###
-Dual licensed under the MIT or GPL Version 2
-http://jquery.org/license
-
-### Version 1.1.0-3 ###
-These are the first releases registered with jQuery plugins.
-
-### Version 1.2.1 ###
-Documentation updates, minor bug fixes.
+[Single page web applications, JavaScript end-to-end][1]
+It provides the capability to make the URI fragment your application state
+API. Bookmarks, browser history, the back button, and the forward button
+can all be made to act as the user expects while enabling you to update
+only the part of the page that has changed.
 
 ## Methods ##
 
@@ -140,11 +110,11 @@ This sets the URI Anchor to:
 Options: The second positional argument tp this method, `option_map`,
 provides a number of options for delimiters:
 
-- `delimit_char`   : Delimiter between independent args. Default is `&`.
-- `delimit_kv_char`: Delimiter between key and value of independent args.  Default is `=`.
-- `sub_delimit_char` : Delimiter between independent and dependent args. Defaults is `:`.
-* `dep_delimit_char` : Delimiter between key-value pairs in dependent args. Default is `|`.
-- `dep_kv_delimit_char` : Delimiter between key and value of dependent args.  Default is ','
+- `delimit_char`   : Delimiters independent args. Default is `&`.
+- `delimit_kv_char`: Delimiters key and value of independent args.  Default is `=`.
+- `sub_delimit_char` : Delimiters independent and dependent args. Defaults is `:`.
+- `dep_delimit_char` : Delimiters key-value pairs in dependent args. Default is `|`.
+- `dep_kv_delimit_char` : Delimits key and value of dependent args.  Default is ','
 
 Boolean values ( as part of a key-value pair ) are convert into the stings 'true' or 'false'.
 
@@ -174,32 +144,31 @@ during its parsing ( See makeAnchorMap )
 The `replace_flag` instructs the routine to replace the URI,
 discarding browser history
 
-
 ### $.uriAnchor.makeAnchorMap
 
 #### Purpose
 
- Parses URI anchor and returns as map
+Parses URI anchor and returns as map
 
 #### Arguments
 
- none
+none
 
 #### Environment
 
- Expects the document.location browser object
+Expects the document.location browser object
 
 #### Settings
 
- none
+none
 
 #### Returns
 
- Map
+Map
 
 #### Throws
 
- none
+none
 
 
 #### Details
@@ -242,6 +211,56 @@ Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
       color : 'red'
     };
 
+## Avoid complex 'SPA framework' libraries ##
+
+jQuery used with this and a few other well-chosen tools forms
+a fantastic basis for a lean, easy to use SPA architecture
+as detailed in [Single page web applications, JavaScript end-to-end][1].
+Here are the recommended tools:
+
+| Capability   | Tool                | Notes                             |
+| ------------ | ------------------- | ----------------------------------|
+| AJAX         | jQuery native       | Use jQuery AJAX methods.          |
+| Promises     | jQuery native       | Use jQuery promise methods.       |
+| Model Events | [Global Events][2]  | jQuery plugin eliminates having   |
+|              |                     | to manage multiple event types.   |
+| Touch        | [Unified events][3] | Unify desktop and touch events.   |
+| Routing      | [uriAnchor][4]      | jQuery plugin for robust routing. |
+|              |                     | Includes support for dependent    |
+|              |                     | and independent query arguments.  |
+| Data Model   | [taffyDB][5]        | A powerful and flexible SQL-like  |
+|              |                     | client data management tool.      |
+| SVG          | [D3][7]             | Great for easy graphs and charts  |
+|              | [SVG][8]            | Low-level jQuery plugin           |
+| Templates    | [Dust][9]           | Uses a powerful template DSL that |
+|              |                     | minimizes chances to intemingle   |
+|              |                     | business and display logic.       |
+
+This suite of tools has all the capabilities of a bleeding-edge 
+SPA "framework" library within the reliable and mature jQuery ecosystem.
+It can provide an application that is significantly more flexible and
+testable since display logic can easily be decoupled from business logic.
+Finally, it leverages jQuery's maturity, performance, and excellent
+tools instead of competing with them.
+
+## Release Notes ##
+
+### Copyright (c)###
+2013 Michael S. Mikowski (mike[dot]mikowski[at]gmail[dotcom])
+
+### License ###
+Dual licensed under the MIT or GPL Version 2
+http://jquery.org/license
+
+### Version 1.1.0-3 ###
+These are the first releases registered with jQuery plugins.
+
+### Version 1.2.1 ###
+Updated documentation, fixed minor bug.
+
+### Version 1.3.0 ###
+Updated documentation.
+
 ## TODO ##
 
 - Maybe reconsider the structure of dependent and indepent variables
@@ -252,6 +271,15 @@ If you want to help out, like all jQuery plugins this is hosted at
 GitHub. Any improvements or suggestions are welcome!
 You can reach me at mike[dot]mikowski[at]gmail[dotcom].
 
-Cheers, Mike
+## END ##
 
-END
+[1]:http://manning.com/mikowski
+[2]:https://github.com/mmikowski/jquery.event.gevent
+[3]:https://github.com/mmikowski/jquery.event.ue
+[4]:https://github.com/mmikowski/urianchor
+[5]:https://github.com/typicaljoe/taffydb
+[6]:http://linkedin.github.io/dustjs
+[7]:https://github.com/mbostock/d3
+[8]:http://keith-wood.name/svg.html
+[9]:http://linkedin.github.io/dustjs
+
