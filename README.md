@@ -220,6 +220,7 @@ Here are the recommended tools:
 
 | Capability   | Tool                | Notes                             |
 | ------------ | ------------------- | ----------------------------------|
+| Websockets   | [Socket.io][6]      | Prefer websockets over AJAX.      |
 | AJAX         | jQuery native       | Use jQuery AJAX methods.          |
 | Promises     | jQuery native       | Use jQuery promise methods.       |
 | Model Events | [Global Events][2]  | jQuery plugin eliminates having   |
@@ -278,8 +279,7 @@ You can reach me at mike[dot]mikowski[at]gmail[dotcom].
 [3]:https://github.com/mmikowski/jquery.event.ue
 [4]:https://github.com/mmikowski/urianchor
 [5]:https://github.com/typicaljoe/taffydb
-[6]:http://linkedin.github.io/dustjs
+[6]:http://socket.io
 [7]:https://github.com/mbostock/d3
 [8]:http://keith-wood.name/svg.html
 [9]:http://linkedin.github.io/dustjs
-
