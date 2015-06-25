@@ -1,7 +1,6 @@
-{
-  "name": "jquery.urianchor",
-  "version": "1.3.0",
-  "description": "uriAnchor jQuery plugin - SPA URI management made simple. Use this plugin to manage dependent and independent parameters in the hash fragment of the URI.  It has been designed and updated over five commercial SPA projects and is featured in the book [Single page web applications - JavaScript end-to-end](http://manning.com/mikowski). It provides the capability to make the URI fragment your application state API.  Bookmarks, browser history, the back button, and the forward button can all be made to act as the user expects.",
+{ "name": "jquery.urianchor",
+  "version": "1.3.1",
+  "description": "uriAnchor jQuery plugin - SPA URI routing made simple. Use this plugin to provide sophisticated routing to your SPA. Used in many commercial SPAs and featured in a best-selling book on SPAs.",
   "main": "jquery.uriAnchor.js",
   "scripts": {
     "test": "echo \"No test yet specified\" && exit 1"

@@ -1,7 +1,7 @@
 /*
- * Jquery plugin for state managment through the URI anchor (hash fragment)
+ * jQuery plugin to manage the URI anchor component ("hash fragmant")
  *
- * Copyright (c) 2013 Michael S. Mikowski
+ * Copyright (c) 2013-2015 Michael S. Mikowski
  * (mike[dot]mikowski[at]gmail[dotcom])
  *
  * Dual licensed under the MIT or GPL Version 2
@@ -9,17 +9,15 @@
  *
  * Versions
  *  1.1.1-3 - Initial jQuery plugin site releases
- *  1.2.1   - Updated documentaiton, minor bug fixes
- *
+ *  1.2.1, 1.2.2, 1.3.0, 1.3.1
+ *   - Updated documentation, minor bug fixes
 */
-
 /*jslint         browser : true, continue : true,
   devel  : true, indent  : 2,    maxerr   : 50,
   newcap : true, nomen   : true, plusplus : true,
   regexp : true, sloppy  : true, vars     : false,
   white  : true
 */
-
 /*global jQuery */
 
 (function ($) {
@@ -27,10 +25,10 @@
     //---------------- BEGIN MODULE SCOPE VARIABLES --------------
     var
       configMap = {
-        regex_anchor_clean1 : /^[#!]*/,
-        regex_anchor_clean2 : /\?[^?]*$/,
-        settable_map_key    : { schema_map : true },
-        schema_map          : null
+        clean0_regex     : /^[#!]*/,
+        clean1_regex     : /\?[^?]*$/,
+        settable_map_key : { schema_map : true },
+        schema_map       : null
       },
 
       getErrorReject,   getVarType,       getCleanAnchorString,
@@ -60,9 +58,9 @@
     getCleanAnchorString = function () {
       return String( document.location.href.split('#')[1] || '' )
         // remove any leading pounds or bangs
-        .replace( configMap.regex_anchor_clean1 , '' )
+        .replace( configMap.clean0_regex , '' )
         // snip off after question-mark ( a ClickStreet bug )
-        .replace( configMap.regex_anchor_clean2 , '' )
+        .replace( configMap.clean1_regex , '' )
         ;
     };
     // End internal utility to clean bookmark

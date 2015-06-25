@@ -110,11 +110,11 @@ This sets the URI Anchor to:
 Options: The second positional argument tp this method, `option_map`,
 provides a number of options for delimiters:
 
-- `delimit_char`   : Delimiters independent args. Default is `&`.
-- `delimit_kv_char`: Delimiters key and value of independent args.  Default is `=`.
-- `sub_delimit_char` : Delimiters independent and dependent args. Defaults is `:`.
-- `dep_delimit_char` : Delimiters key-value pairs in dependent args. Default is `|`.
-- `dep_kv_delimit_char` : Delimits key and value of dependent args.  Default is ','
+- `delimit_char`   : Delimiter between independent args. Default is `&`.
+- `delimit_kv_char`: Delimiter between key and value of independent args.  Default is `=`.
+- `sub_delimit_char` : Delimiter between independent and dependent args. Defaults is `:`.
+- `dep_delimit_char` : Delimiter between key-value pairs in dependent args. Default is `|`.
+- `dep_kv_delimit_char` : Delimiter between key and value of dependent args.  Default is ','
 
 Boolean values ( as part of a key-value pair ) are convert into the stings 'true' or 'false'.
 
@@ -253,14 +253,11 @@ tools instead of competing with them.
 Dual licensed under the MIT or GPL Version 2
 http://jquery.org/license
 
-### Version 1.1.0-3 ###
+### Versions 1.1.0-3 ###
 These are the first releases registered with jQuery plugins.
 
-### Version 1.2.1 ###
+### Versions 1.2.0-2, 1.3.0-1 ###
 Updated documentation, fixed minor bug.
-
-### Version 1.3.0 ###
-Updated documentation.
 
 ## TODO ##
 
