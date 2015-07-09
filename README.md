@@ -13,15 +13,36 @@ API. Bookmarks, browser history, the back button, and the forward button
 can all be made to act as the user expects while enabling you to update
 only the part of the page that has changed.
 
+## Preferred listener ##
+
+The preferred listener to use with URI Anchor is `hashchange`, like so:
+
+    // jQuery
+    $(window).bind( 'hashchange', onHashChange );
+
+    // Native
+    window.onhashchange( onHashChange );
+
+## Example implementation ##
+
+See a full example, clone the [SPA listings](10),
+dereference a copy of the 6.5 listings, and then open the web page.  Like so:
+
+    cd spa/listings/ch05-06
+    cp -aL 6.5 6.5dr
+    cd 6.5dr
+    google-chrome spa.html
+
+You must log in -- any user name will work -- to open and close the chat window and activate the avitars.
+
 ## Methods ##
 
 ### $.uriAnchor.setAnchor ##
 
 #### Purpose ####
 
-Sets Anchor component of the URI from a Map
-(The Anchor component is also known as the
-'hash fragment' or 'bookmark component')
+Sets Anchor component of the URI from a Map.
+The Anchor component is also known as the 'hash fragment' or 'bookmark component'.
 
 #### Arguments ####
 
@@ -237,7 +258,7 @@ Here are the recommended tools:
 |              |                     | minimizes chances to intemingle   |
 |              |                     | business and display logic.       |
 
-This suite of tools has all the capabilities of a bleeding-edge 
+This suite of tools has all the capabilities of a bleeding-edge
 SPA "framework" library within the reliable and mature jQuery ecosystem.
 It can provide an application that is significantly more flexible and
 testable since display logic can easily be decoupled from business logic.
@@ -258,6 +279,9 @@ These are the first releases registered with jQuery plugins.
 
 ### Versions 1.2.0-2, 1.3.0-1 ###
 Updated documentation, fixed minor bug.
+
+### Version 1.3.2 ###
+Added example to show use of hashchange listener.
 
 ## TODO ##
 
@@ -280,3 +304,4 @@ You can reach me at mike[dot]mikowski[at]gmail[dotcom].
 [7]:https://github.com/mbostock/d3
 [8]:http://keith-wood.name/svg.html
 [9]:http://linkedin.github.io/dustjs
+[10]:https://github.com/mmikowski/spa
