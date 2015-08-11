@@ -283,6 +283,9 @@ Updated documentation, fixed minor bug.
 ### Version 1.3.2 ###
 Added example to show use of hashchange listener.
 
+### Version 1.3.3 ###
+Added changeAnchorPart example code
+
 ## TODO ##
 
 - Maybe reconsider the structure of dependent and indepent variables

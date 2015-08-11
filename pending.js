@@ -1,4 +1,7 @@
-/*
+/* TODO: Write a node.js test suite and compare this against
+ *  existing module.  This has just a few variable name changes,
+ *  but better safe than sorry!
+ * 
  * jQuery plugin to manage the URI anchor component ("hash fragmant")
  *
  * Copyright (c) 2013-2015 Michael S. Mikowski
@@ -9,7 +12,7 @@
  *
  * Versions
  *  1.1.1-1.1.3 - Initial jQuery plugin site releases
- *  1.2.1-1.3.3 - Updated documentation, minor bug fixes
+ *  1.2.1-1.3.4 - Updated documentation, minor bug fixes
 */
 /*jslint         browser : true, continue : true,
   devel  : true, indent  : 2,    maxerr   : 50,
@@ -31,7 +34,7 @@
       },
 
       getErrorReject,   getVarType,       getCleanAnchorString,
-      parseStringToMap, makeAnchorString, setAnchor,
+      parseStrToMap,    makeAnchorString, setAnchor,
       makeAnchorMap,    configModule
       ;
     //----------------- END MODULE SCOPE VARIABLES ---------------
@@ -64,10 +67,10 @@
     };
     // End internal utility to clean bookmark
 
-    // Begin internal utility /parseStringToMap/
-    parseStringToMap = function ( arg_map  ) {
+    // Begin internal utility /parseStrToMap/
+    parseStrToMap = function ( arg_map  ) {
       var
-        input_string    = arg_map.input_string    || '',
+        input_str       = arg_map.input_str       || '',
         delimit_char    = arg_map.delimit_char    || '&',
         delimit_kv_char = arg_map.delimit_kv_char || '=',
         output_map      = {},
@@ -75,7 +78,7 @@
         splitter_array, i, key_val_array
         ;
 
-      splitter_array = input_string.split( delimit_char );
+      splitter_array = input_str.split( delimit_char );
 
       for ( i = 0; i < splitter_array.length; i++  ) {
         key_val_array = splitter_array[i].split( delimit_kv_char );
@@ -91,16 +94,16 @@
       }
       return output_map;
     };
-    // End internal utility /parseStringToMap/
+    // End internal utility /parseStrToMap/
 
     // Begin utility /makeAnchorString/
     // -- all the heavy lifting for setAnchor ( see below )
     // Converts a map into the anchor component as described
     // in setAnchor
-    makeAnchorString = function ( anchor_map_in, option_map_in  ) {
+    makeAnchorString = function ( anchor_in_map, option_in_map  ) {
       var
-        anchor_map          = anchor_map_in || {},
-        option_map          = option_map_in || {},
+        anchor_map          = anchor_in_map || {},
+        option_map          = option_in_map || {},
         delimit_char        = option_map.delimit_char        || '&',
         delimit_kv_char     = option_map.delimit_kv_char     || '=',
         sub_delimit_char    = option_map.sub_delimit_char    || ':',
@@ -110,7 +113,7 @@
         key_val_array       = [],
 
         schema_map_val, schema_map_dep, schema_map_dep_val,
-        key_name, key_value, class_name, output_kv_string,
+        key_name, key_value, class_name, output_kv_str,
         sub_key_name, dep_map, dep_key_name, dep_key_value,
 
         dep_kv_array
@@ -138,8 +141,8 @@
             }
           }
 
-          output_kv_string   = '';
-          key_value   = anchor_map[key_name];
+          output_kv_str = '';
+          key_value     = anchor_map[key_name];
 
           if ( key_value === undefined ) { key_value = ''; }
 
@@ -162,11 +165,11 @@
 
           // Booleans, we skip false
           if ( class_name === 'Boolean'  ) {
-            if ( key_value ) { output_kv_string += encodeURIComponent( key_name ); }
+            if ( key_value ) { output_kv_str += encodeURIComponent( key_name ); }
           }
           // String and Number
           else {
-             output_kv_string
+             output_kv_str
                 += encodeURIComponent( key_name )
                 +  delimit_kv_char
                 +  encodeURIComponent( key_value )
@@ -226,12 +229,12 @@
             }
             // append dependent arguments if there are any
             if ( dep_kv_array.length > 0  ) {
-              output_kv_string
+              output_kv_str
                 += sub_delimit_char + dep_kv_array.join( dep_delimit_char )
               ;
             }
           }
-          key_val_array.push( output_kv_string );
+          key_val_array.push( output_kv_str );
         }
       }
 
@@ -355,18 +358,18 @@
     //
     setAnchor = function ( anchor_map, option_map, replace_flag  ) {
       var
-        anchor_string = makeAnchorString( anchor_map, option_map  ),
+        anchor_str = makeAnchorString( anchor_map, option_map  ),
         uri_array, uri_string
         ;
 
       uri_array = document.location.href.split( '#',2 );
-      uri_string = anchor_string
-        ? uri_array[0] + '#!' + anchor_string : uri_array[0]
+      uri_string = anchor_str
+        ? uri_array[0] + '#!' + anchor_str : uri_array[0]
         ;
 
       if ( replace_flag  ) {
-        if ( anchor_string  ) {
-          document.location.replace( uri_array[0] + '#!' + anchor_string );
+        if ( anchor_str  ) {
+          document.location.replace( uri_array[0] + '#!' + anchor_str );
         }
         else {
           document.location.replace( uri_array[0] );
@@ -428,15 +431,15 @@
 
     makeAnchorMap = function () {
       var
-        anchor_string = getCleanAnchorString(),
+        anchor_str = getCleanAnchorString(),
         anchor_map, idx, keys_array, key_name, key_value, dep_array
         ;
 
-      if ( anchor_string === ''  ) { return {}; }
+      if ( anchor_str === ''  ) { return {}; }
 
       // first pass decompose
-      anchor_map = parseStringToMap({
-        input_string     : anchor_string,
+      anchor_map = parseStrToMap({
+        input_str        : anchor_str,
         delimit_char     : '&',
         delimit_kv_char  : '='
       });
@@ -465,8 +468,8 @@
         if ( dep_array[1] && dep_array[1] !== '' ) {
           anchor_map[key_name] = dep_array[0];
 
-          anchor_map[ '_' + key_name ] = parseStringToMap({
-            input_string    : dep_array[1],
+          anchor_map[ '_' + key_name ] = parseStrToMap({
+            input_str       : dep_array[1],
             delimit_char    : '|',
             delimit_kv_char : ','
           });
