@@ -198,7 +198,7 @@ Parses the browser URI anchor into a map using the same
 rules used to set the anchor in the method setAnchor
 ( see above ).
 
-This method creates an additional key type, `_s_<indendent_arg>`
+This method creates an additional key type, `_s_<independent_arg>`
 for each independent argument with dependent arguments.
 
 These keys point to a string representation of the independent
