@@ -1,20 +1,23 @@
-# uriAnchor #
+# uriAnchor
+## Use libraries, not frameworks
+This is a library that strives to be best-in-class.
+If you are considering using an SPA framework, please read [Do you
+really want an SPA framework?][0] first.
 
-## Summary ##
-
-A jQuery plugin for management of the URI hash component.
+## Overview
+Make your application bookmarks, browser history, the back button,
+and the forward button act just as the user expects while enabling you
+to update only the part of the page that has changed.  This jQuery
+plugin helps you do this by making the URI Anchor (or hash fragment,
+as others call it) your application state API.
 
 Use this plugin to manage dependent and independent variables in the hash
 fragment of the URI.  It has been designed and updated over five commercial
-SPA projects and is featured in the book
-[Single page web applications, JavaScript end-to-end][1]
-It provides the capability to make the URI fragment your application state
-API. Bookmarks, browser history, the back button, and the forward button
-can all be made to act as the user expects while enabling you to update
-only the part of the page that has changed.
+SPA projects and is featured in the book book 
+**Single Page Web Applications - JavaScript end-to-end**
+which is available from [Amazon][1] and directly from [Manning][2].
 
-## Preferred listener ##
-
+## Preferred listener
 The preferred listener to use with URI Anchor is `hashchange`, like so:
 
     // jQuery
@@ -23,8 +26,7 @@ The preferred listener to use with URI Anchor is `hashchange`, like so:
     // Native
     window.onhashchange( onHashChange );
 
-## Example implementation ##
-
+## Example implementation
 See a full example, clone the [SPA listings](10),
 dereference a copy of the 6.5 listings, and then open the web page.  Like so:
 
@@ -35,41 +37,32 @@ dereference a copy of the 6.5 listings, and then open the web page.  Like so:
 
 You must log in -- any user name will work -- to open and close the chat window and activate the avitars.
 
-## Methods ##
-
-### $.uriAnchor.setAnchor ##
-
-#### Purpose ####
-
+## Methods
+### $.uriAnchor.setAnchor
+#### Purpose
 Sets Anchor component of the URI from a Map.
 The Anchor component is also known as the 'hash fragment' or 'bookmark component'.
 
-#### Arguments ####
-
+#### Arguments
 Arguments are positional:
 
 - 1 ( `anchor_map` ) : The map to be encoded to the URI anchor
 - 2 ( `option_map` ) : A map of options
 - 3 ( `replace_flag` ) : A boolean flag.  When true, the method replaces the URI so that prior URI is not entered into the browser history
 
-#### Environment ####
-
+#### Environment
 Expects the document.location browser object
 
-#### Settings ####
-
+#### Settings
 none
 
-#### Returns ####
-
+#### Returns
 boolean: true on success, false on failure
 
-#### Throws ####
-
+#### Throws
 none
 
-#### Details ####
-
+#### Details
 The first positional argument, `anchor_map`, may be a simple map:
 
     $.uriAnchor.setAnchor({
@@ -166,34 +159,26 @@ The `replace_flag` instructs the routine to replace the URI,
 discarding browser history
 
 ### $.uriAnchor.makeAnchorMap
-
 #### Purpose
-
 Parses URI anchor and returns as map
 
 #### Arguments
-
 none
 
 #### Environment
-
 Expects the document.location browser object
 
 #### Settings
-
 none
 
 #### Returns
-
 Map
 
 #### Throws
-
 none
 
 
 #### Details
-
 Parses the browser URI anchor into a map using the same
 rules used to set the anchor in the method setAnchor
 ( see above ).
@@ -209,7 +194,6 @@ for routines using setAnchor to check if a part of the anchor
 has changed.
 
 #### Example
-
 If the browser URI Anchor looks like this:
 
     #!page=profile:uname,wendy|online,true&slider=confirm:text,hello\
@@ -232,79 +216,35 @@ Then calling $.uriAnchor.makeAnchorMap(); will return a map that looks like so:
       color : 'red'
     };
 
-## Avoid complex 'SPA framework' libraries ##
-
-jQuery used with this and a few other well-chosen tools forms
-a fantastic basis for a lean, easy to use SPA architecture
-as detailed in [Single page web applications, JavaScript end-to-end][1].
-Here are the recommended tools:
-
-| Capability   | Tool                | Notes                             |
-| ------------ | ------------------- | ----------------------------------|
-| Websockets   | [Socket.io][6]      | Prefer websockets over AJAX.      |
-| AJAX         | jQuery native       | Use jQuery AJAX methods.          |
-| Promises     | jQuery native       | Use jQuery promise methods.       |
-| Model Events | [Global Events][2]  | jQuery plugin eliminates having   |
-|              |                     | to manage multiple event types.   |
-| Touch        | [Unified events][3] | Unify desktop and touch events.   |
-| Routing      | [uriAnchor][4]      | jQuery plugin for robust routing. |
-|              |                     | Includes support for dependent    |
-|              |                     | and independent query arguments.  |
-| Data Model   | [taffyDB][5]        | A powerful and flexible SQL-like  |
-|              |                     | client data management tool.      |
-| SVG          | [D3][7]             | Great for easy graphs and charts  |
-|              | [SVG][8]            | Low-level jQuery plugin           |
-| Templates    | [Dust][9]           | Uses a powerful template DSL that |
-|              |                     | minimizes chances to intemingle   |
-|              |                     | business and display logic.       |
-
-This suite of tools has all the capabilities of a bleeding-edge
-SPA "framework" library within the reliable and mature jQuery ecosystem.
-It can provide an application that is significantly more flexible and
-testable since display logic can easily be decoupled from business logic.
-Finally, it leverages jQuery's maturity, performance, and excellent
-tools instead of competing with them.
-
-## Release Notes ##
-
-### Copyright (c)###
+## Release Notes
+### Copyright (c)
 2013 Michael S. Mikowski (mike[dot]mikowski[at]gmail[dotcom])
 
-### License ###
+### License
 Dual licensed under the MIT or GPL Version 2
 http://jquery.org/license
 
-### Versions 1.1.0-3 ###
+### Versions 1.1.0-3
 These are the first releases registered with jQuery plugins.
 
-### Versions 1.2.0-2, 1.3.0-1 ###
+### Versions 1.2.0-2, 1.3.0-1
 Updated documentation, fixed minor bug.
 
-### Version 1.3.2 ###
+### Version 1.3.2
 Added example to show use of hashchange listener.
 
-### Version 1.3.3 ###
+### Version 1.3.3
 Added changeAnchorPart example code
 
-## TODO ##
+## TODO
+Reconsider the structure of dependent and indepent variables
 
-- Maybe reconsider the structure of dependent and indepent variables
-
-## Contribute! ##
-
+## Contribute!
 If you want to help out, like all jQuery plugins this is hosted at
 GitHub. Any improvements or suggestions are welcome!
 You can reach me at mike[dot]mikowski[at]gmail[dotcom].
 
-## END ##
-
-[1]:http://manning.com/mikowski
-[2]:https://github.com/mmikowski/jquery.event.gevent
-[3]:https://github.com/mmikowski/jquery.event.ue
-[4]:https://github.com/mmikowski/urianchor
-[5]:https://github.com/typicaljoe/taffydb
-[6]:http://socket.io
-[7]:https://github.com/mbostock/d3
-[8]:http://keith-wood.name/svg.html
-[9]:http://linkedin.github.io/dustjs
-[10]:https://github.com/mmikowski/spa
+## END
+[0]:http://mmikowski.github.io/no-frameworks
+[1]:http://www.amazon.com/dp/1617290750
+[2]:http://manning.com/mikowski
